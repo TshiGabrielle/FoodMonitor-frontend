@@ -55,4 +55,13 @@ export class DateService {
       `${this.apiUrl}/${dateId}/aliments/${alimentConsommeId}`
     );
   }
+
+  //cas 8 : afficher points pour une date
+  getPoints(dateId: number) {
+
+    return this.http.get<number>(
+      `${this.apiUrl}/${dateId}/points`
+    );
+
+  }
 }

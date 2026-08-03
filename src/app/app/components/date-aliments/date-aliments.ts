@@ -20,6 +20,7 @@ export class DateAlimentsComponent {
   selectedDateId = 0;
 
   aliments: Aliment[] = [];
+  totalPoints = 0;
 
   constructor(
     private dateService: DateService
@@ -45,10 +46,22 @@ export class DateAlimentsComponent {
     }
 
     this.dateService
-      .getAlimentsForDate(this.selectedDateId)
+      .getAlimentsForDate(
+        this.selectedDateId
+      )
       .subscribe(data => {
 
         this.aliments = data;
+
+      });
+
+    this.dateService
+      .getPoints(
+        this.selectedDateId
+      )
+      .subscribe(points => {
+
+        this.totalPoints = points;
 
       });
 

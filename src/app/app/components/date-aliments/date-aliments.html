@@ -26,12 +26,18 @@
     -
     {{ aliment.points }} points
 
+
     <button
       (click)="deleteAliment(aliment.id)">
 
       Supprimer
 
     </button>
+
+    <p>
+      Total points :
+      {{ totalPoints }}
+    </p>
 
   </li>
 
