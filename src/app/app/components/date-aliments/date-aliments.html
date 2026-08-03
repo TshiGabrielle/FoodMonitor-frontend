@@ -39,6 +39,14 @@
       {{ totalPoints }}
     </p>
 
+    <p
+      *ngIf="totalPoints > 400"
+      style="color:red">
+
+      Attention :
+      plus de 400 points consommés !
+
+    </p>
   </li>
 
 </ul>
