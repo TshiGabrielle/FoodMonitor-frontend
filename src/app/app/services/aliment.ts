@@ -13,6 +13,8 @@ export class AlimentService {
   private apiUrl = 'http://localhost:5232/api/aliments';
   //Pour ne pas avoir de rafraichissement manuel de la page
   public alimentAdded = new Subject<void>();
+  //pour modifier un aliment sélectionné
+  public alimentToEdit = new Subject<Aliment>();
 
 
   constructor(private http: HttpClient) { }
@@ -25,6 +27,14 @@ export class AlimentService {
   create(aliment: Aliment): Observable<Aliment> {
     return this.http.post<Aliment>(
       this.apiUrl,
+      aliment
+    );
+  }
+
+  //cas 3 : modifier aliment
+  update(aliment: Aliment): Observable<boolean> {
+    return this.http.put<boolean>(
+      `${this.apiUrl}/${aliment.id}`,
       aliment
     );
   }

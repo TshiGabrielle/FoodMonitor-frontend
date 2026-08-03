@@ -39,4 +39,9 @@ export class AlimentListComponent implements OnInit {
         this.cdr.detectChanges();
       });
   }
+
+  //pour modifier un aliment de la liste
+  edit(aliment: Aliment) {
+    this.alimentService.alimentToEdit.next(aliment);
+  }
 }

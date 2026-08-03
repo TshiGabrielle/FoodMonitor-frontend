@@ -1,0 +1,15 @@
+<h3>Ajouter un aliment</h3>
+
+<input
+  type="text"
+  [(ngModel)]="nom"
+  placeholder="Nom">
+
+<input
+  type="number"
+  [(ngModel)]="points"
+  placeholder="Points">
+
+<button (click)="add()">
+  Ajouter
+</button>

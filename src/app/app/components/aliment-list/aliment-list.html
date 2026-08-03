@@ -1,7 +1,13 @@
 <h2>Aliments ({{ aliments.length }})</h2>
 
-<ul>
-  <li *ngFor="let aliment of aliments">
-    {{ aliment.nom }} - {{ aliment.points }} points
-  </li>
-</ul>
+<li *ngFor="let aliment of aliments">
+
+  {{ aliment.nom }} - {{ aliment.points }} points
+
+  <button (click)="add()">
+
+    {{ selectedId === null ? 'Ajouter' : 'Modifier' }}
+
+  </button>
+
+</li>
