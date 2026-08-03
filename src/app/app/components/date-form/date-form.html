@@ -1,0 +1,59 @@
+<h3>Ajouter une date</h3>
+
+<input
+  type="date"
+  [(ngModel)]="date">
+
+<button (click)="add()">
+  Ajouter date
+</button>
+
+<hr>
+
+<h3>Associer un aliment à une date</h3>
+
+<label>Date :</label>
+
+<select [(ngModel)]="selectedDateId">
+
+  <option [value]="0">
+    Choisir une date
+  </option>
+
+  <option
+    *ngFor="let date of dates"
+    [value]="date.id">
+
+    {{ date.date }}
+
+  </option>
+
+</select>
+
+<br><br>
+
+<label>Aliment :</label>
+
+<select [(ngModel)]="selectedAlimentId">
+
+  <option [value]="0">
+    Choisir un aliment
+  </option>
+
+  <option
+    *ngFor="let aliment of aliments"
+    [value]="aliment.id">
+
+    {{ aliment.nom }}
+
+  </option>
+
+</select>
+
+<br><br>
+
+<button (click)="addAlimentToDate()">
+  Ajouter aliment à la date
+</button>
+
+
