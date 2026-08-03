@@ -15,4 +15,12 @@ export class AlimentService {
   getAll(): Observable<Aliment[]> {
     return this.http.get<Aliment[]>(this.apiUrl);
   }
+
+  //cas 2 : ajout aliment
+  create(aliment: Aliment): Observable<Aliment> {
+    return this.http.post<Aliment>(
+      this.apiUrl,
+      aliment
+    );
+  }
 }
