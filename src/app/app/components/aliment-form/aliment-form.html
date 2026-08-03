@@ -1,4 +1,4 @@
-<h3>Ajouter un aliment</h3>
+<h3>Ajouter / Modifier un aliment</h3>
 
 <input
   type="text"
@@ -11,5 +11,5 @@
   placeholder="Points">
 
 <button (click)="add()">
-  Ajouter
+  {{ selectedId === null ? 'Ajouter' : 'Modifier' }}
 </button>
