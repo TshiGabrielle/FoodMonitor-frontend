@@ -1,0 +1,38 @@
+<h3>Aliments consommés</h3>
+
+<select
+  [(ngModel)]="selectedDateId"
+  (change)="loadAliments()">
+
+  <option [value]="0">
+    Choisir une date
+  </option>
+
+  <option
+    *ngFor="let date of dates"
+    [value]="date.id">
+
+    {{ date.date }}*
+  </option>
+
+</select>
+
+<br><br>
+<ul>
+
+  <li *ngFor="let aliment of aliments">
+
+    {{ aliment.nom }}
+    -
+    {{ aliment.points }} points
+
+    <button
+      (click)="deleteAliment(aliment.id)">
+
+      Supprimer
+
+    </button>
+
+  </li>
+
+</ul>
