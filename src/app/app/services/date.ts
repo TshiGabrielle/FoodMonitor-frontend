@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { DateSurveillance } from '../types/date-surveillance';
+import { Aliment } from '../types/aliment';
 
 @Injectable({
   providedIn: 'root'
@@ -40,4 +41,18 @@ export class DateService {
     );
   }
 
+  getAlimentsForDate(dateId: number) {
+    return this.http.get<Aliment[]>(
+      `${this.apiUrl}/${dateId}/aliments`
+    );
+  }
+
+  deleteAlimentFromDate(
+    dateId: number,
+    alimentConsommeId: number
+  ) {
+    return this.http.delete<boolean>(
+      `${this.apiUrl}/${dateId}/aliments/${alimentConsommeId}`
+    );
+  }
 }

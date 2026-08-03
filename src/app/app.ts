@@ -4,10 +4,16 @@ import { AlimentListComponent } from './app/components/aliment-list/aliment-list
 import { AlimentFormComponent } from './app/components/aliment-form/aliment-form';
 import { DateListComponent } from './app/components/date-list/date-list';
 import { DateFormComponent } from './app/components/date-form/date-form';
+import { DateAlimentsComponent } from './app/components/date-aliments/date-aliments';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AlimentListComponent, AlimentFormComponent, DateListComponent, DateFormComponent],
+  imports: [RouterOutlet,
+    AlimentListComponent,
+    AlimentFormComponent,
+    DateListComponent,
+    DateFormComponent,
+  DateAlimentsComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
